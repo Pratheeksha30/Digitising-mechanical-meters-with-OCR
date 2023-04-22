@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}  
+    <h2 class="title">Welcome. Please choose your role to continue</h2>
+    <form method = "POST">
+      <div class="dropdown">
+        <select name="role" id="dropbtn">
+          <option class="title" value="Admin">Admin</option>
+          <option class="title" value="Customer" selected>Customer</option>
+        </select>
+        <div class="p-t-15">
+          <button class="btn btn--radius-2 btn--blue" type="submit">Continue</button>
+      </div>
+    </form>
+{% endblock %}

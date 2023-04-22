@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="Electricity Bill">
+        <meta name="author" content="Pranamya, Pankhuri, Pratheeksha">
+        <meta name="keywords" content="Our webpage">       
+        <title>Electricity Bill</title>
+        <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+        <style>
+            .role option {
+            position: relative;
+            display: inline-block;
+            padding: 10px;
+            font-size: 30px;
+            z-index: 1;
+            box-shadow: 5px 10px 16px 5px rgba(0,0,0,0.7);
+            min-width: 10%;
+            size: 30px;
+            }
+            select {
+              width: 50%;
+              font-size: 30px;
+              font-size: 24px;
+              color: #525252;
+              font-weight: 400;
+              margin-bottom: 40px;
+            }
+            /* turn it off completely */
+            .role:active, select:hover {
+              outline: none
+            }
+
+            /* make it red instead (with with same width and style) */
+            .role:active, select:hover {
+              outline-color: rgb(221, 70, 163);
+            }
+            .role:focus{border-color: rgb(163, 32, 113);}
+            .font-robo {
+            font-family: "Roboto", "Arial", "Helvetica Neue", sans-serif;
+            }
+
+            .font-poppins {
+            font-family: "Poppins", "Arial", "Helvetica Neue", sans-serif;
+            }
+            .row {
+            display: flex;
+            flex-wrap: wrap;
+            }
+
+            .row-space {
+            justify-content: space-between;
+            }
+
+            .col-2 {
+            width: -webkit-calc((100% - 30px) / 2);
+            width: -moz-calc((100% - 30px) / 2);
+            width: calc((100% - 30px) / 2);
+            }
+
+            @media (max-width: 767px) {
+            .col-2 {
+                width: 100%;
+            }
+            }
+            html {
+            box-sizing: border-box;
+            }
+
+            * {
+            padding: 0;
+            margin: 0;
+            }
+
+            *, *:before, *:after {
+            box-sizing: inherit;
+            }
+
+            /* ==========================================================================
+            #RESET
+            ========================================================================== */
+            /**
+            * A very simple reset that sits on top of Normalize.css.
+            */
+            body,
+            h1, h2, h3, h4, h5, h6,
+            blockquote, p, pre,
+            dl, dd, ol, ul,
+            figure,
+            hr,
+            fieldset, legend {
+            margin: 0;
+            padding: 0;
+            }
+
+            /**
+            * Remove trailing margins from nested lists.
+            */
+            li > ol,
+            li > ul {
+            margin-bottom: 0;
+            }
+            li {
+                display: inline;
+            }
+
+            /**
+            * 1. Reset Chrome and Firefox behaviour which sets a `min-width: min-content;`
+            *    on fieldsets.
+            */
+            fieldset {
+            min-width: 0;
+            /* [1] */
+            border: 0;
+            }
+
+            button {
+            outline: none;
+            background: none;
+            border: none;
+            }
+
+            .page-wrapper {
+            min-height: 100vh;
+            }
+            .navigation {
+            box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.5);
+            position: sticky;
+            opacity: 0.99;
+            }
+            a:link {
+                color: rgb(48, 46, 46);
+                text-decoration: none;
+                font-weight: 500;
+                padding-left: 10px;   
+                padding-right: 10px;   
+            }
+            a:visited {
+                color: rgb(43, 42, 42);
+                text-decoration: none;
+                font-weight: 500;
+                padding-left: 10px;   
+                padding-right: 10px;   
+            }
+            a:hover {
+                color: rgb(196, 181, 190);
+                text-decoration: none;
+                font-weight: 700;
+            }
+            a:active {
+                color: rgb(145, 143, 145);
+                text-decoration: none;
+                font-weight: 500;
+                padding-left: 10px;   
+            }
+
+            body {
+            font-family: "Poppins", "Arial", "Helvetica Neue", sans-serif;
+            font-weight: 400;
+            font-size: 14px;
+            }
+
+            .bg-gra-02 {
+                background: linear-gradient(to top right, #fc2c77 0%, #6c4079 100%);
+            }
+            .bg-gra-03 {
+                background: linear-gradient(to right, #e45288 0%, #9652a8 100%);
+            }
+            .bg-gra-01 {
+                background: linear-gradient(to top , #fbc2eb 0%, #a18cd1 100%);
+            }
+            .p-t-130 {
+            padding-top: 130px;
+            }
+
+            .p-t-15 {
+            padding-top: 15px;
+            }
+            .p-t-35 {
+            padding-top: 35px;
+            }
+            .p-b-100 {
+            padding-bottom: 100px;
+            }
+            .p-b-35 {
+            padding-bottom: 35px;
+            }
+            .p-l-25 {
+            padding-left: 25px;
+            }
+            .wrapper {
+            margin: 0 auto;
+            }
+
+            .wrapper--w960 {
+            max-width: 960px;
+            }
+
+            .wrapper--w780 {
+            max-width: 780px;
+            }
+
+            .wrapper--w680 {
+            max-width: 680px;
+            }
+
+            /* ==========================================================================
+            #BUTTON
+            ========================================================================== */
+            .btn {
+            display: inline-block;
+            line-height: 50px;
+            padding: 0 50px;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            font-size: 18px;
+            color: #fff;
+            font-family: "Poppins", "Arial", "Helvetica Neue", sans-serif;
+            }
+            .btn--radius-2 {
+            border-radius: 5px;
+            }
+
+            .btn--pill {
+            border-radius: 20px;
+            }
+
+            .btn--blue {
+            background: #8d23aa;
+            }
+
+            .btn--blue:hover {
+            background: #37093f;
+            }
+            /* ==========================================================================
+            #FORM
+            ========================================================================== */
+            input {
+            outline: none;
+            margin: 0;
+            border: none;
+            box-shadow: none;
+            width: 100%;
+            font-size: 14px;
+            font-family: inherit;
+            }
+
+            .input--style-4 {
+            line-height: 50px;
+            background: #fafafa;
+            box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.4);
+            border-radius: 5px;
+            padding: 0 20px;
+            font-size: 16px;
+            color: #666;
+            transition: all 0.4s ease;
+            }
+            .input--style-3 {
+            line-height: 50px;
+            padding: 0 20px;
+            z-index: 3;
+            font-size: 20px;
+            color: #666;
+            transition: all 0.4s ease;
+            }
+
+            .input--style-4::-webkit-input-placeholder {
+            /* WebKit, Blink, Edge */
+            color: #666;
+            }
+
+            .input--style-4:-moz-placeholder {
+            /* Mozilla Firefox 4 to 18 */
+            color: #666;
+            opacity: 1;
+            }
+
+            .input--style-4::-moz-placeholder {
+            /* Mozilla Firefox 19+ */
+            color: #666;
+            opacity: 1;
+            }
+
+            .input--style-4:-ms-input-placeholder {
+            /* Internet Explorer 10-11 */
+            color: #666;
+            }
+
+            .input--style-4:-ms-input-placeholder {
+            /* Microsoft Edge */
+            color: #666;
+            }
+
+            .label {
+            font-size: 16px;
+            color: #555;
+            text-transform: capitalize;
+            display: block;
+            margin-bottom: 5px;
+            }
+
+            .input-group {
+            position: relative;
+            margin-bottom: 22px;
+            }
+
+            .title {
+            font-size: 24px;
+            color: #525252;
+            font-weight: 400;
+            margin-bottom: 40px;
+            }
+
+            /* ==========================================================================
+            #CARD
+            ========================================================================== */
+            .card {
+            border-radius: 3px;
+            background: #fff;
+            }
+
+            .card-4 {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.5);
+            }
+
+            .card-4 .card-body {
+            padding: 57px 65px;
+            padding-bottom: 65px;
+            }
+
+            @media (max-width: 767px) {
+            .card-4 .card-body {
+                padding: 50px 40px;
+            }
+            }
+        </style>
+    </head>
+    <body>
+        <ul class="navigation bg-gra-03 p-t-35 p-b-35 p-l-25 font-poppins input--style-3"> 
+            <li><a href="{{url_for('home')}}">Home &nbsp </a></li>
+            <li><a href="{{url_for('contact')}}">Contact &nbsp </a></li>
+            <li><a href="{{url_for('about')}}">About </a></li>
+            <h1 style="color: rgb(252, 225, 249); font-size: larger; font-weight: 400; position:absolute; right: 5% ; top: 0%;">Digitising Mechanical Electricity Meters</h1>
+        </ul>            
+        <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
+            <div class="wrapper wrapper--w680">
+                <div class="card card-4">
+                    <div class="card-body">
+                        {% block content %}
+                        {% endblock %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

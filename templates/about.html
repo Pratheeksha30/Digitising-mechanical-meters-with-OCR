@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}  
+  <h2 class="title">About this project  &nbsp: </h2>
+  <h1 style="font-weight:300; font-size:medium;">Several technologies have been innovated over the years in attempts to digitize every possible process. However, it is much easier to create new technology than to replace the existing ones. There are yet  a large number of rural areas where digital meters have not been installed and traditional mechanical meters are still in use. The utility providers have human dependencies to take regular scans of the meters, in person, to generate the bill. To create a hassle-free and accurate billing system, we have come up with the idea of “Digitization of mechanical meter reading using OCR''. 
+    <br><br>Keeping the under-privileged areas of the world in mind, this solution has been developed. Unlike the advanced metering infrastructure (AMI), this method does not require any advanced complex infrastructure. A camera fixed in front of the mechanical meter takes the image of the meter every month and sends it over to the database. Using the image, the current reading is extracted (by OCR methods). Current reading is subtracted from the previous months’ reading and stored back in the database. Based on the obtained monthly reading, tariff calculations are made. For the customer to view the generated bill, they will be required to log in into the web application.
+    </h1>
+    
+{% endblock %}

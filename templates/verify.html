@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}  
+  <h2 class="title">To Add New Customers</h2><br>
+  <form method="POST">
+      <div class="row row-space">
+          <div class="col-2">
+              <div class="input-group">
+                  <label class="label">Enter the secret key</label>
+                  <input class="input--style-4" type="password" name="key" autocomplete="off">
+              </div>
+          </div>
+      </div>
+      <div class="p-t-15">
+          <button class="btn btn--radius-2 btn--blue" type="submit">Submit</button>
+      </div>
+  </form>
+{% endblock %}
+
